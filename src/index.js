@@ -6,6 +6,7 @@ import Contact from "./Components/contactus";
 import Menu from "./Components/menu";
 import Navbar from "./Components/navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Auth from "./Components/auth";
 const root = ReactDom.createRoot(document.getElementById("root"));
 
 root.render(
@@ -17,6 +18,7 @@ root.render(
         <Route path="/aboutus" element={<About />} />
         <Route path="/contactus" element={<Contact />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

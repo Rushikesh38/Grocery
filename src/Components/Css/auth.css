@@ -1,0 +1,26 @@
+/* body {
+  height: 100vh;
+  background: #0062e6 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+
+a {
+  text-decoration: none;
+}
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+}
+.form-right i {
+  font-size: 100px;
+}
+
+.cursor-mode {
+  cursor: pointer;
+}

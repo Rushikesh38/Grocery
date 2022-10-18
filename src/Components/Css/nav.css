@@ -4,7 +4,24 @@
 .nav-item{
     padding: 0px 3.1rem 1.1rem 0;
 }
-
-.img-section{
-    width: 50%;
+.img-container{
+    width: 5%;
 }
+/* .face{
+    width: 89%;
+    border: 1px solid black;
+    border-radius: 1rem;
+    
+} */
+
+.facelogo{
+    width: 89%;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+/* img{
+    width: 89%;
+    border: 1px solid black;
+    border-radius: 1rem;
+} */
+

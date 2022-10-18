@@ -1,0 +1,45 @@
+.container{
+    margin-top: 17px;
+    /* background-color: rgb(124, 120, 120); */
+    border-radius: 3px;
+}
+.lantext{
+    width: 50%;
+    margin-top: 4rem;
+    /* background-color: green; */
+}
+.heading{
+    width: 70%;
+}
+.para{
+    width: 64%;
+    margin-top: 1.5rem;
+}
+
+
+/* Button desgin */
+.btn-section{
+    margin-top: 4rem;
+}
+.btn-danger{
+    background-color: red;
+    padding: 0.5em 1.5em 0.4em 1.5em;
+    border-radius: 18px 18px 18px 18px;
+}
+
+.heroimg{
+    width: 123%;
+    margin-left: -14rem;
+}
+
+/* Customer info section */
+.customer-info{
+    display: flex;
+}
+
+
+
+/* Font start Css */
+.starfont{
+    size: 5rem;
+}

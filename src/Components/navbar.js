@@ -37,6 +37,9 @@ function navbar() {
                             <li class="nav-item">
                                 <Link to="/contactus" class="nav-link active">Contactus</Link>
                             </li>
+                            <li class="nav-item">
+                                <Link to="/admin" class="nav-link active">Admin</Link>
+                            </li>
                         </ul>
 
                         <div class="form-inline my-2 my-lg-0">

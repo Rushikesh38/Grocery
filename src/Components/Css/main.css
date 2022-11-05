@@ -35,11 +35,36 @@
 /* Customer info section */
 .customer-info{
     display: flex;
+    width: 100%;
+}
+.lasttwo{
+    padding: 0 0.3em 0.8em 0.8em;
 }
 
-
-
-/* Font start Css */
+/* Font star Css */
 .starfont{
     size: 5rem;
 }
+
+/* styling rating section */
+.consumertext{
+    font-size: 1rem;
+}
+.rating{
+    display: flex;
+
+}
+.rating-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rating-info-item{
+    padding: 0 0 0 0.4em;
+    
+}
+
+.num{
+    font-size: 0.9em;
+}
+

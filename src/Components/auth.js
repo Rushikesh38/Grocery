@@ -94,7 +94,7 @@ const Auth = () => {
                         </div>
 
                         <div className="col-sm-6">
-                          <a href="#" className="float-end text-primary">
+                          <a className="float-end text-primary">
                             Forgot Password?
                           </a>
                         </div>
@@ -110,10 +110,10 @@ const Auth = () => {
                         <div className="container text-center">
                           <div>or login with</div>
                           <div className="row g-3 m-2 d-flex justify-content-center">
-                            <a className="col-4 btn btn-danger m-2" href="">
+                            <a className="col-4 btn btn-danger m-2" >
                               Google
                             </a>
-                            <a className="col-4 btn btn-primary m-2" href="">
+                            <a className="col-4 btn btn-primary m-2" >
                               Facebook
                             </a>
                           </div>

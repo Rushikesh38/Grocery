@@ -1,0 +1,18 @@
+.adminproduct-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.admin-form-container{
+    width: 33%;
+
+}
+.product-description{
+    width: 100%;
+}
+.adminProduct-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

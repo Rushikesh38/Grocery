@@ -1,6 +1,8 @@
 import './Css/main.css'
 import Hero from '../Images/finalhero.png'
 import { AiTwotoneStar } from "react-icons/ai";
+import { FaUsers } from "react-icons/fa";
+import { TbMinusVertical } from "react-icons/tb";
 function main() {
     return (
         <>
@@ -25,29 +27,52 @@ function main() {
                         </div>
                     </div>
                     <div class="col-12 col-mid-6 col-lg-6">
-                        <img src={Hero} alt="" class="heroimg"/>
+                        <img src={Hero} alt="" class="heroimg" />
                     </div>
                 </div>
             </div>
 
-            {/* <div class="container">
+            <div class="container">
+
+
+
+
+
                 <div class="customer-info">
                     <div class="cutomer-info-item">
-                        <h3>Active Users</h3>
+                        <h4 className='consumertext'>Active Users</h4>
+                        <FaUsers size="1rem" />
+                        {/* <FaUsers size="1rem/> */}
                     </div>
-                    <span>|</span>
-                    <div class="cutomer-info-item">
-                        <h3>Ratings</h3>
-                        <AiTwotoneStar size="3rem"/>
-                     
+                    <div className="customer-info-item lasttwo">
+                        <span><TbMinusVertical size="1.6rem"/></span>
+                    </div>
+                    <div className="consumer-info-item lasttwo">
+                        <h4 className="consumertext">Ratings</h4>
+
+                        <div className="rating-info">
+                            <div className="rating-info-item">
+                            <AiTwotoneStar size="1rem" />
+                            </div>
+                            <div className="rating-info-item">
+                            <p className='num last'>4.5</p>
+                                </div>
+                        </div>
                        
+                        
+
+
                     </div>
-                    <i class="fa-solid fa-star-sharp"></i>
+                    {/* <div class="cutomer-info-item">
+                        <h3 className='consumertext'>Ratings</h3>
+                        <div className="rating">
+                            <AiTwotoneStar size="1rem" />
+                            <p>4.5</p>
+                        </div>
+                    </div> */}
+                    {/* <i class="fa-solid fa-star-sharp"></i> */}
                 </div>
-               
-                
-                <i class="fa-sharp fa-solid fa-star"></i>
-            </div> */}
+            </div>
 
         </>
     );

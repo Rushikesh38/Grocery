@@ -9,16 +9,22 @@ const AdminProduct = () => {
     const [description,setDescription] = useState("");
 
 
-
+    // Function to set the value of name state getting from form
     const onChangeName=(e)=>{
         setName(e.target.value);
     }
+
+    // Function to set the value of Url state getting from form
     const onChangeUrl=(e)=>{
         setUrl(e.target.value);
     }
+
+    // Function to set the value of price state getting from form
     const onChangePrice=(e)=>{
         setPrice(e.target.value);
     }
+
+    // Function to set the value of description state getting from form
     const onChangeDes=(e)=>{
         setDescription(e.target.value);
     }
@@ -58,7 +64,7 @@ const AdminProduct = () => {
                     </div>
 
                 </form>
-                
+
                 {/* Just to check wheeather the state is working or not */}
                 {/* {name}
                 {url}

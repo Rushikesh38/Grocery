@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
-import userRoutes from "./routes/testroute.js";
+import userRoutes from "./routes/itemroutes.js";
 
 // code to run a python file using Node.js. Will need this when we add a recommendation model
 // import {spawn} from 'child_process'

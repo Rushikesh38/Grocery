@@ -1,9 +1,9 @@
 import express from "express";
-import PostMessage from "../models/testmodel.js";
+import PostMessage from "../models/product.js";
 
 const router = express.Router();
 
-export const getPosts = async (req, res) => {
+export const getItems = async (req, res) => {
   try {
     const postMessage = await PostMessage.find({});
     console.log(postMessage);
@@ -13,7 +13,7 @@ export const getPosts = async (req, res) => {
   }
 };
 
-export const createPost = async (req, res) => {
+export const createItem = async (req, res) => {
     const post = req.body;
   
     const newPostMessage = new PostMessage({

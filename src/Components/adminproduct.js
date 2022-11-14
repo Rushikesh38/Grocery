@@ -1,34 +1,35 @@
 import './Css/adminForm.css';
 import React,{useState} from 'react';
+import * as api from "../api"
 
 const AdminProduct = () => {
 
-    const [name,setName] = useState("");
-    const [url,setUrl] = useState("")
-    const [price,setPrice] = useState(0);
-    const [description,setDescription] = useState("");
+    const [item,setItem] = useState({name: "",
+        image: "",
+        price: "",
+        description: ""
+    });
 
-
-    // Function to set the value of name state getting from form
-    const onChangeName=(e)=>{
-        setName(e.target.value);
+    function handleChange(e) {
+        setItem((item) => ({ ...item, [e.target.name]: e.target.value }));
+        console.log(item)
     }
 
-    // Function to set the value of Url state getting from form
-    const onChangeUrl=(e)=>{
-        setUrl(e.target.value);
+    function handleSubmit(e) {
+        e.preventDefault();
+        const itemdata = {            
+            name: item.name,
+            image: item.image,
+            price: item.price,
+            description: item.description                
+        };
+        console.log(itemdata);
+        try {
+            api.createItem(itemdata); // send data to backend            
+        } catch (error) {
+            console.log(error.message);
+        }
     }
-
-    // Function to set the value of price state getting from form
-    const onChangePrice=(e)=>{
-        setPrice(e.target.value);
-    }
-
-    // Function to set the value of description state getting from form
-    const onChangeDes=(e)=>{
-        setDescription(e.target.value);
-    }
-
 
     return (
         <>
@@ -36,38 +37,38 @@ const AdminProduct = () => {
                 <h3>Sell your products</h3>
             </div>
             <div className="container admin-form-container">
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Name</label>
-                        <input onChange={onChangeName} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Name'/>
-                        {/* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> */}
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                        <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
+                        <input onChange={handleChange} type="text" className="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Name'/>
+                        {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Image(URL)</label>
-                        <input onChange={onChangeUrl} type="text" class="form-control" placeholder='Image url'/>
+                    <div className="mb-3">
+                        <label htmlFor="exampleInputPassword1" className="form-label">Image(URL)</label>
+                        <input onChange={handleChange} type="text" className="form-control" name="image" placeholder='Image image'/>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label" >Price</label>
-                        <input onChange={onChangePrice}type="text" class="form-control" placeholder='Rs'/>
+                    <div className="mb-3">
+                        <label htmlFor="exampleInputPassword1" className="form-label" >Price</label>
+                        <input onChange={handleChange}type="text" className="form-control" name="price" placeholder='Rs'/>
                     </div>
-                    <div class="mb-3 ">
-                        <label for="exampleInputPassword1" class="form-label">Description</label>
-                        <textarea onChange={onChangeDes} name="" id="" cols="10" rows="8" className='product-description' placeholder='Description of product'></textarea>
-                        {/* <input type="password" class="form-control" id="exampleInputPassword1"/> */}
+                    <div className="mb-3 ">
+                        <label htmlFor="exampleInputPassword1" className="form-label">Description</label>
+                        <textarea onChange={handleChange} name="" id="" cols="10" rows="8" name="description" className='product-description' placeholder='Description of product'></textarea>
+                        {/* <input type="password" className="form-control" id="exampleInputPassword1"/> */}
                     </div>
-                    {/* <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-                        <label class="form-check-label" for="exampleCheck1"> me out</label>
+                    {/* <div className="mb-3 form-check">
+                    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+                        <label className="form-check-label" htmlFor="exampleCheck1"> me out</label>
                 </div> */}
                     <div className="container adminProduct-btn">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     </div>
 
                 </form>
 
                 {/* Just to check wheeather the state is working or not */}
                 {/* {name}
-                {url}
+                {image}
                 {price}
                 {description} */}
             </div>

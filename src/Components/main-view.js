@@ -6,40 +6,40 @@ import { TbMinusVertical } from "react-icons/tb";
 function main() {
     return (
         <>
-            <div class="container">
+            <div className="container">
                 {/* one more commite */}
-                <div class="row">
-                    <div class="col-12 col-mid-6 col-lg-6 lantext">
-                        <div class="col1">
-                            <div class="heading">
+                <div className="row">
+                    <div className="col-12 col-mid-6 col-lg-6 lantext">
+                        <div className="col1">
+                            <div className="heading">
                                 <h1>Lets Now Shop for
                                     <h2>Daily And Food Neccessary</h2>
                                 </h1>
                             </div>
-                            <div class="para">
+                            <div className="para">
                                 we are trusted grocery shop you can buy your necessary product use your phone
                             </div>
                         </div>
-                        <div class="btn-section">
+                        <div className="btn-section">
                             <span>
-                                <button class="btn btn-danger">Shop Now</button>
+                                <button className="btn btn-danger">Shop Now</button>
                             </span>
                         </div>
                     </div>
-                    <div class="col-12 col-mid-6 col-lg-6">
-                        <img src={Hero} alt="" class="heroimg" />
+                    <div className="col-12 col-mid-6 col-lg-6">
+                        <img src={Hero} alt="" className="heroimg" />
                     </div>
                 </div>
             </div>
 
-            <div class="container">
+            <div className="container">
 
 
 
 
 
-                <div class="customer-info">
-                    <div class="cutomer-info-item">
+                <div className="customer-info">
+                    <div className="cutomer-info-item">
                         <h4 className='consumertext'>Active Users</h4>
                         <FaUsers size="1rem" />
                         {/* <FaUsers size="1rem/> */}
@@ -63,14 +63,14 @@ function main() {
 
 
                     </div>
-                    {/* <div class="cutomer-info-item">
+                    {/* <div className="cutomer-info-item">
                         <h3 className='consumertext'>Ratings</h3>
                         <div className="rating">
                             <AiTwotoneStar size="1rem" />
                             <p>4.5</p>
                         </div>
                     </div> */}
-                    {/* <i class="fa-solid fa-star-sharp"></i> */}
+                    {/* <i className="fa-solid fa-star-sharp"></i> */}
                 </div>
             </div>
 

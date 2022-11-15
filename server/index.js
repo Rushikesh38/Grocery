@@ -31,7 +31,7 @@ const PORT = 1300;
 
 app.use("/user", userRoutes);
 
-const CONNECTION_URL = "mongodb://0.0.0.0:27017/test-app";
+const CONNECTION_URL = "mongodb://0.0.0.0:27017/Grocery";
 
 mongoose
   .connect(CONNECTION_URL)

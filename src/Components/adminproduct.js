@@ -12,7 +12,7 @@ const AdminProduct = () => {
 
     function handleChange(e) {
         setItem((item) => ({ ...item, [e.target.name]: e.target.value }));
-        console.log(item)
+        // console.log(item)
     }
 
     function handleSubmit(e) {
@@ -23,9 +23,12 @@ const AdminProduct = () => {
             price: item.price,
             description: item.description                
         };
-        console.log(itemdata);
+        
+        //console.log(itemdata);
+        
         try {
             api.createItem(itemdata); // send data to backend            
+            // console.log(api.fetchItems());
         } catch (error) {
             console.log(error.message);
         }

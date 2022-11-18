@@ -11,16 +11,15 @@ function Menu() {
   //       price: "",
   //       description: ""
   //   });
+
   const [item,setItem] = useState([]);
+
   useEffect(() => {
     try {           
       api.fetchItems()
       .then((res) => {
-        const itemdata = res.data;
-        setItem(itemdata);
-        // setItem([...item, {name: itemdata.name, image: itemdata.image, price: itemdata.price, description: itemdata.description}]);
-        console.log(itemdata);
-        console.log(item)
+        setItem(res.data);        
+        console.log("this is running twice coz of strictmode tag - so that comp can check for errors more accurately")        
     }); 
     } catch (error) {
         console.log(error.message);
@@ -28,15 +27,21 @@ function Menu() {
   
   }, []);
 
+  useEffect(()=>{
+    console.log(item);    
+  }, [item])
+
   
   return (
-    <div>      
-      {/* {item.map((item)=>{
-        <div>
-        <h1>{item.name}</h1>
-        </div>
-      })} */}
-    </div>
+    <>
+      helo:    
+      <ul>
+      {item.map((item)=>{
+        //console.log(item.name)
+        return <li key={item.name}>{item.name}</li>
+      })}
+      </ul> 
+    </>
   );
 }
 

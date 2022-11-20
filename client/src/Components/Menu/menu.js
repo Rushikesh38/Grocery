@@ -1,8 +1,8 @@
 // import Navbar from "./navbar";
-import ourproducts from "./ourproducts"
+import Ourproducts from "./ourproducts"
 import { useEffect, useState } from "react";
-import * as api from "../../src/api"
-
+import * as api from "../../api"
+import { Timer } from "./timer";
 
 function Menu() {
 
@@ -16,7 +16,7 @@ function Menu() {
 
   useEffect(() => {
     try {           
-      api.fetchItems()
+      api.fetchAdminItems()
       .then((res) => {
         setItem(res.data);        
         console.log("this is running twice coz of strictmode tag - so that comp can check for errors more accurately")        
@@ -34,7 +34,8 @@ function Menu() {
   
   return (
     <>
-      helo:    
+      <div> helo: </div>
+      {<Timer/>}
       <ul>
       {item.map((item)=>{
         //console.log(item.name)

@@ -40,6 +40,9 @@ function navbar() {
                             <li className="nav-item">
                                 <Link to="/admin" className="nav-link active">Admin</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/owner" className="nav-link active">Owner</Link>
+                            </li>
                         </ul>
 
                         <div className="form-inline my-2 my-lg-0">

@@ -7,6 +7,6 @@ const itemSchema = mongoose.Schema({
     description: String,
 })
 
-var ProductData = mongoose.model("PostMessage", itemSchema);
+var AdminItem = mongoose.model("AdminData", itemSchema);
 
-export default ProductData;
+export default AdminItem;

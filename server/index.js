@@ -2,7 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
-import userRoutes from "./routes/itemroutes.js";
+import adminRoutes from "./routes/adminroutes.js";
+import onwerRoutes from "./routes/ownerroutes.js"
 
 // code to run a python file using Node.js. Will need this when we add a recommendation model
 // import {spawn} from 'child_process'
@@ -29,9 +30,10 @@ app.use(cors());
 
 const PORT = 1300;
 
-app.use("/user", userRoutes);
+app.use("/admin", adminRoutes);
+app.use("/owner", onwerRoutes);
 
-const CONNECTION_URL = "mongodb://0.0.0.0:27017/Grocery";
+const CONNECTION_URL = "mongodb://0.0.0.0:27017/Grocery-App";
 
 mongoose
   .connect(CONNECTION_URL)

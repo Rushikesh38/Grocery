@@ -3,11 +3,12 @@ import ReactDom from "react-dom/client";
 import App from "./App";
 import About from "./Components/aboutus";
 import Contact from "./Components/contactus";
-import Menu from "./Components/menu";
+import Menu from "./Components/Menu/menu";
 import Navbar from "./Components/navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Auth from "./Components/auth";
 import AdminProduct from "./Components/adminproduct";
+import Owner from "./Components/owner"
 const root = ReactDom.createRoot(document.getElementById("root"));
 
 root.render(
@@ -21,6 +22,7 @@ root.render(
         <Route path="/menu" element={<Menu />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/admin" element={<AdminProduct />} />
+        <Route path="/owner" element={<Owner />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

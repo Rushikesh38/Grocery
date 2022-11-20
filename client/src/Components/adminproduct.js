@@ -27,8 +27,8 @@ const AdminProduct = () => {
         //console.log(itemdata);
         
         try {
-            api.createItem(itemdata); // send data to backend            
-            // console.log(api.fetchItems());
+            api.createAdminItems(itemdata); // send data to backend            
+            // console.log(api.fetchAdminItems());
         } catch (error) {
             console.log(error.message);
         }

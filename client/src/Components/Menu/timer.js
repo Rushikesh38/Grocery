@@ -5,7 +5,7 @@ const MINUTE = SECOND * 60;
 const HOUR = MINUTE * 60;
 const DAY = HOUR * 24;
 
-export const Timer = () => {
+const Timer = () => {
     {/* deadline = new Date().toString() */}
     const deadline = "November, 20, 2022";
     const parsedDeadline = useMemo(() => Date.parse(deadline), [deadline]);
@@ -40,3 +40,5 @@ export const Timer = () => {
         </div>
     );
 };
+
+export default Timer;

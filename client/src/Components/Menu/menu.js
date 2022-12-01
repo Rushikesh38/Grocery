@@ -2,7 +2,8 @@
 import Ourproducts from "./ourproducts"
 import { useEffect, useState } from "react";
 import * as api from "../../api"
-import { Timer } from "./timer";
+import Timer from "./timer";
+import Recipe from "./recipe"
 
 function Menu() {
 
@@ -34,7 +35,8 @@ function Menu() {
   
   return (
     <>
-      <div> helo: </div>
+    {<Recipe/>}
+      
       {<Timer/>}
       <ul>
       {item.map((item)=>{

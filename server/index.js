@@ -28,7 +28,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-const PORT = 1300;
+const PORT = 1800;
 
 app.use("/admin", adminRoutes);
 app.use("/owner", onwerRoutes);
@@ -46,6 +46,6 @@ mongoose
   });
 
 app.listen(PORT, () => {
-    console.log("Server started on 1300");
+    console.log("Server started on 1800");
   });
   

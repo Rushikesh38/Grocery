@@ -3,6 +3,7 @@ import Ourproducts from "./ourproducts"
 import { useEffect, useState } from "react";
 import * as api from "../../api"
 import { Timer } from "./timer";
+import Cards from "./cards";
 
 function Menu() {
 
@@ -12,36 +13,42 @@ function Menu() {
   //       description: ""
   //   });
 
-  const [item,setItem] = useState([]);
+  const [item, setItem] = useState([]);
 
   useEffect(() => {
-    try {           
+    try {
       api.fetchAdminItems()
-      .then((res) => {
-        setItem(res.data);        
-        console.log("this is running twice coz of strictmode tag - so that comp can check for errors more accurately")        
-    }); 
+        .then((res) => {
+          setItem(res.data);
+          console.log("this is running twice coz of strictmode tag - so that comp can check for errors more accurately")
+        });
     } catch (error) {
-        console.log(error.message);
+      console.log(error.message);
     }
-  
+
   }, []);
 
-  useEffect(()=>{
-    console.log(item);    
+  useEffect(() => {
+    console.log(item);
   }, [item])
 
-  
+
   return (
     <>
-      <div> helo: </div>
-      {<Timer/>}
-      <ul>
-      {item.map((item)=>{
-        //console.log(item.name)
-        return <li key={item.name}>{item.name}</li>
-      })}
-      </ul> 
+      <div>  </div>
+      {<Timer />}
+
+      <Cards/>
+      {/* {<Ourproducts/>} */}
+      {/* <ul>
+        {item.map((item) => {
+          return (
+            <>
+              <Cards item={item} />
+            </>
+          )
+        })}
+      </ul> */}
     </>
   );
 }

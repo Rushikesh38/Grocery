@@ -33,7 +33,9 @@ const PORT = 1800;
 app.use("/admin", adminRoutes);
 app.use("/owner", onwerRoutes);
 
-const CONNECTION_URL = "mongodb://0.0.0.0:27017/Grocery-App";
+// const CONNECTION_URL = "mongodb://0.0.0.0:27017/Grocery-App";
+const CONNECTION_URL = "mongodb+srv://rushikesh:rushikesh@cluster0.wmpaxgm.mongodb.net/?retryWrites=true&w=majority";
+
 
 mongoose
   .connect(CONNECTION_URL)

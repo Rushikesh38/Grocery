@@ -1,9 +1,10 @@
 // import Navbar from "./navbar";
-import Ourproducts from "./ourproducts"
+// import Ourproducts from "./ourproducts"
 import { useEffect, useState } from "react";
 import * as api from "../../api"
-import { Timer } from "./timer";
+import Timer from "./timer";
 import Cards from "./cards";
+import Recipe from "./recipe"
 
 function Menu() {
 
@@ -20,7 +21,7 @@ function Menu() {
       api.fetchAdminItems()
         .then((res) => {
           setItem(res.data);
-          console.log("this is running twice coz of strictmode tag - so that comp can check for errors more accurately")
+          // console.log("this is running twice coz of strictmode tag - so that comp can check for errors more accurately")
         });
     } catch (error) {
       console.log(error.message);
@@ -28,27 +29,24 @@ function Menu() {
 
   }, []);
 
-  useEffect(() => {
-    console.log(item);
-  }, [item])
+  // useEffect(() => {
+  //   console.log(item);
+  // }, [item])
 
 
   return (
-    <>
-      <div>  </div>
+    <>      
+    {<Recipe/>}
       {<Timer />}
-
-      <Cards/>
-      {/* {<Ourproducts/>} */}
-      {/* <ul>
+      <ul>
         {item.map((item) => {
           return (
-            <>
+            <>            
               <Cards item={item} />
             </>
           )
         })}
-      </ul> */}
+      </ul>
     </>
   );
 }

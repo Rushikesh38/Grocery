@@ -7,3 +7,6 @@ export const createAdminItems = (newAdminItem) => API.post("/admin", newAdminIte
 
 export const fetchOwnerItems = () => API.get("/owner");
 export const createOwnerItems = (newOwnerItem) => API.post("/owner", newOwnerItem);
+
+export const signIn = (formData) => API.post("/user/signin", formData);
+export const signUp = (formData) => API.post("/user/signup", formData);

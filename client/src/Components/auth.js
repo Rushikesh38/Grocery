@@ -1,16 +1,70 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../Components/Css/auth.css";
+import * as api from "../api/index.js"
+import { set } from "mongoose";
+
+const initialState = {
+  userName: "",  
+  email: "",
+  password: "",  
+};
 
 const Auth = () => {
   // state to check if the user wants to signin or signup
-  const [isSignup, setIsSignup] = useState(true);
+  const [isSignup, setIsSignup] = useState(false);
+  const [formData, setFormData] = useState(initialState);
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value }); // set the value of a particular input
+  };
 
   const switchMode = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);
   };
+
+  const signin = (formData, navigate) => {
+    try {
+      //api.signIn(formData);
+      
+      api.signIn(formData)
+        .then((res) => {
+          // setItem(res.data);
+          const response = res.data;
+          localStorage.setItem("profile", JSON.stringify({ response }));
+          // console.log("this is running twice coz of strictmode tag - so that comp can check for errors more accurately")
+        });
+
+      // navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const signup = (formData, navigate) => {
+    try {
+      const { data } = api.signUp(formData);
+      localStorage.setItem("profile", JSON.stringify({ data }));
+      // navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };    
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (isSignup) {         
+      signup(formData, navigate); // send input data in the database. navigate to navigate once something happens
+    } else {
+      signin(formData, navigate);
+    }
+  };
+
 
   return (
     <>
@@ -39,7 +93,9 @@ const Auth = () => {
                               <input
                                 type="text"
                                 className="form-control"
+                                onChange={handleChange}
                                 placeholder="Enter Username"
+                                name="userName"
                               />
                             </div>
                           </div>
@@ -56,7 +112,9 @@ const Auth = () => {
                             <input
                               type="email"
                               className="form-control"
+                              onChange={handleChange}
                               placeholder="Enter Email"
+                              name="email"
                             />
                           </div>
                         </div>
@@ -72,7 +130,9 @@ const Auth = () => {
                             <input
                               type="password"
                               className="form-control"
+                              onChange={handleChange}
                               placeholder="Enter Password"
+                              name="password"
                             />
                           </div>
                         </div>
@@ -103,8 +163,9 @@ const Auth = () => {
                           <button
                             type="submit"
                             className="btn btn-primary px-4 float-end"
+                            onClick={handleSubmit}
                           >
-                            Sign Up
+                            {isSignup ? "Sign Up" : "Sign In"}
                           </button>
                         </div>
                         <div className="container text-center">

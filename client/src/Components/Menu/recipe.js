@@ -7,7 +7,7 @@ function Recipe() {
     return (
         <>
         <div>
-        <button onClick={hello} className="btn btn-primary">Submit</button>
+        <button onClick={hello} className="btn btn-primary">Add recipe</button>
         </div>
         </>
     );

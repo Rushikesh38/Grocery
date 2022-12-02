@@ -1,0 +1,11 @@
+Personal notes:
+
+# typical server workflow:
+I add a route (to send n get data from there). Put use line in index.js
+
+models:
+database schema
+
+controller:
+functions r declared here (like create, fetch)
+

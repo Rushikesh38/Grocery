@@ -3,23 +3,26 @@ import logo from '../Images/logo.webp';
 import './Css/nav.css';
 import { useState, useEffect } from 'react';
 import decode from "jwt-decode";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 function Navbar() {
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile"))); //get user from local storage
     const location = useLocation();
+    const navigate = useNavigate();
 
-    // const user = true;
+    // const user = false;
     useEffect(
         () => {
         //   to refresh on login
-          const token = user?.token;
+          const token = user?.response.token;
+        //   console.log()
           if (token) {
-            const decodedToken = decode(token);
-    
-            if (decodedToken.exp * 1000 < new Date().getTime()) {
-              // logout();
+              const decodedToken = decode(token);
+              
+              console.log(decodedToken.exp)
+              if (decodedToken.exp * 1000 < new Date().getTime()) {
+              logout();
             }
     
             setUser(JSON.parse(localStorage.getItem("profile")));
@@ -29,6 +32,12 @@ function Navbar() {
           location,
         ] /*on location change run this to set user. No no need to refresh to get profile in navbar on login */
       );    
+
+      const logout = () => {
+        localStorage.clear();
+        navigate("/");
+      };
+    
 
     return (
         <div>
@@ -76,7 +85,12 @@ function Navbar() {
                         <Link to="/auth">
                            <button className='btn btn-danger'>Sign In</button>
                         </Link>
-                        </div>):(<h1>{user.response.result.name}</h1>)}
+                        </div>):(
+                        <div className="row">
+                        <h1 className="col">{user.response.result.name}</h1>
+                        <button className='btn btn-danger col' onClick={logout}>Logout</button>
+                        </div>
+                        )}
                         {/* <form className="form-inline my-2 my-lg-0">
                             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                         </form> */}

@@ -5,7 +5,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../Components/Css/auth.css";
 import * as api from "../api/index.js"
-import { set } from "mongoose";
 
 const initialState = {
   userName: "",  
@@ -28,28 +27,27 @@ const Auth = () => {
   };
 
   const signin = (formData, navigate) => {
-    try {
-      //api.signIn(formData);
-      
+    try {      
       api.signIn(formData)
         .then((res) => {
-          // setItem(res.data);
           const response = res.data;
           localStorage.setItem("profile", JSON.stringify({ response }));
-          // console.log("this is running twice coz of strictmode tag - so that comp can check for errors more accurately")
         });
 
-      // navigate("/");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
 
   const signup = (formData, navigate) => {
-    try {
-      const { data } = api.signUp(formData);
-      localStorage.setItem("profile", JSON.stringify({ data }));
-      // navigate("/");
+    try {      
+      api.signUp(formData)
+        .then((res) => {
+          const response = res.data;
+          localStorage.setItem("profile", JSON.stringify({ response }));
+        });
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

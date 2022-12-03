@@ -9,7 +9,8 @@ import * as api from "../api/index.js"
 const initialState = {
   userName: "",  
   email: "",
-  password: "",  
+  password: "", 
+  uType: "", 
 };
 
 const Auth = () => {
@@ -20,6 +21,7 @@ const Auth = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value }); // set the value of a particular input
+    // console.log(formData)
   };
 
   const switchMode = () => {
@@ -135,7 +137,7 @@ const Auth = () => {
                           </div>
                         </div>
 
-                        <div className="col-sm-6">
+                        {/* <div className="col-sm-6">
                           <div className="form-check">
                             <input
                               className="form-check-input"
@@ -149,13 +151,13 @@ const Auth = () => {
                               Remember me
                             </label>
                           </div>
-                        </div>
+                        </div> */}
 
-                        <div className="col-sm-6">
+                        {/* <div className="col-sm-6">
                           <a className="float-end text-primary">
                             Forgot Password?
                           </a>
-                        </div>
+                        </div> */}
 
                         <div className="col-12">
                           <button
@@ -166,7 +168,30 @@ const Auth = () => {
                             {isSignup ? "Sign Up" : "Sign In"}
                           </button>
                         </div>
-                        <div className="container text-center">
+                        
+                        {isSignup && (
+                        <div className="row">  
+                      <div className="form-check col">
+                        <input className="form-check-input" type="radio" onChange={handleChange} name="uType" id="buyerType" value="buyer"/>
+                        <label className="form-check-label" for="flexRadioDefault1">
+                          Buyer
+                        </label>
+                      </div>
+                      <div className="form-check col">
+                        <input className="form-check-input" type="radio" onChange={handleChange} name="uType" id="sellerType" value="seller"/>
+                        <label className="form-check-label" for="flexRadioDefault2">
+                          Seller
+                        </label>
+                      </div>
+                      <div className="form-check col">
+                        <input className="form-check-input" type="radio" onChange={handleChange} name="uType" id="ownerType" value="owner"/>
+                        <label className="form-check-label" for="flexRadioDefault3">
+                          Owner
+                        </label>
+                      </div>
+                      </div>)}
+
+                        {/* <div className="container text-center">
                           <div>or login with</div>
                           <div className="row g-3 m-2 d-flex justify-content-center">
                             <a className="col-4 btn btn-danger m-2" >
@@ -176,7 +201,7 @@ const Auth = () => {
                               Facebook
                             </a>
                           </div>
-                        </div>
+                        </div> */}
                         <hr className="my-4" />
                         <div className="text-center">
                           {isSignup

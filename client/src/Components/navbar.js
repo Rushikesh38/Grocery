@@ -16,11 +16,10 @@ function Navbar() {
         () => {
         //   to refresh on login
           const token = user?.response.token;
-        //   console.log()
+        //   console.log(user.response.result.utype)
           if (token) {
-              const decodedToken = decode(token);
-              
-              console.log(decodedToken.exp)
+              const decodedToken = decode(token);              
+              //console.log(decodedToken.exp)
               if (decodedToken.exp * 1000 < new Date().getTime()) {
               logout();
             }

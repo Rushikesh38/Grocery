@@ -1,0 +1,3 @@
+If we deploy the json data on web, will have to write a fetch function to get data from web (easy)
+
+For now this is fine

@@ -1,0 +1,18 @@
+{
+    "title":"tomato soup",
+    "recipe":[
+        {
+            "item":"tomato", 
+            "quantity": 3
+        },
+        {
+            "item":"water", 
+            "quantity": 2
+        },
+        {
+            "item":"masala", 
+            "quantity": 4
+        }
+        
+    ]
+}

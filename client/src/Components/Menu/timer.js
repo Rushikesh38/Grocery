@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import timerdata from "../../developer/timer.json"
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
@@ -6,8 +7,7 @@ const HOUR = MINUTE * 60;
 const DAY = HOUR * 24;
 
 const Timer = () => {
-    {/* deadline = new Date().toString() */}
-    const deadline = "November, 20, 2022";
+    const deadline = timerdata.deadline;
     const parsedDeadline = useMemo(() => Date.parse(deadline), [deadline]);
     const [time, setTime] = useState(parsedDeadline - Date.now());
 

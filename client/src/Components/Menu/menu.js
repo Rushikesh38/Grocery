@@ -5,7 +5,7 @@ import * as api from "../../api"
 import Timer from "./timer";
 import Cards from "./cards";
 import Recipe from "./recipe"
-import '../Css/menu.css'
+// import '../Css/menu.css'
 // import '../Css/menu.css';
 function Menu() {
 
@@ -22,7 +22,7 @@ function Menu() {
       api.fetchAdminItems()
         .then((res) => {
           setItem(res.data);
-          console.log(item);
+          // console.log(item);
           // console.log("this is running twice coz of strictmode tag - so that comp can check for errors more accurately")
         });
     } catch (error) {

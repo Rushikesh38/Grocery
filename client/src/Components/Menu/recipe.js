@@ -1,7 +1,13 @@
+import recipedata from "../../developer/recipe.json"
+
 function Recipe() {
 
     const hello = () => {
-        console.log("helo")
+        console.log(recipedata.title)
+        recipedata.recipe.map(data=>(
+            console.log(data.item + " " + data.quantity)
+            // console.log()
+        ))
     }
 
     return (

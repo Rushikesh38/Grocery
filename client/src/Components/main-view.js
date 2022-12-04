@@ -12,9 +12,8 @@ function main() {
                     <div className="col-12 col-mid-6 col-lg-6 lantext">
                         <div className="col1">
                             <div className="heading">
-                                <h1>Lets Now Shop for
-                                    <h2>Daily And Food Neccessary</h2>
-                                </h1>
+                                <h1>Lets Now Shop for</h1>
+                                <h2>Daily And Food Neccessary</h2>                                
                             </div>
                             <div className="para">
                                 we are trusted grocery shop you can buy your necessary product use your phone

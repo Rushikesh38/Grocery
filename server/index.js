@@ -35,8 +35,8 @@ app.use("/admin", adminRoutes);
 app.use("/owner", onwerRoutes);
 app.use("/user", userRoutes);
 
-const CONNECTION_URL = "mongodb://0.0.0.0:27017/Grocery-App";
-// const CONNECTION_URL = "mongodb+srv://rushikesh:rushikesh@cluster0.wmpaxgm.mongodb.net/?retryWrites=true&w=majority";
+// const CONNECTION_URL = "mongodb://0.0.0.0:27017/Grocery-App";
+const CONNECTION_URL = "mongodb://rushikesh:rushikesh@ac-duddpxx-shard-00-00.wmpaxgm.mongodb.net:27017,ac-duddpxx-shard-00-01.wmpaxgm.mongodb.net:27017,ac-duddpxx-shard-00-02.wmpaxgm.mongodb.net:27017/?ssl=true&replicaSet=atlas-zzmjk1-shard-0&authSource=admin&retryWrites=true&w=majority";
 
 
 mongoose

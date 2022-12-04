@@ -5,6 +5,7 @@ import * as api from "../../api"
 import Timer from "./timer";
 import Cards from "./cards";
 import Recipe from "./recipe"
+import '../Css/menu.css'
 // import '../Css/menu.css';
 function Menu() {
 
@@ -29,48 +30,43 @@ function Menu() {
     }
 
   }, []);
-
-  // useEffect(() => {
-  //   console.log(item);
-  // }, [item])
-
   const [search, setSearch] = useState(" ");
   return (
     <>
       {<Recipe />}
       {<Timer />}
 
-      <input type="text" name="" id="" placeholder="search" onChange={(event) => { setSearch(event.target.value) }} />
- 
-        
-        {
-          item.filter((val) => {
-            if (search === " ") {
-              return val
-            }
 
-            if (val.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())) {
-              return val;
-            }
-          }).map((item) => {
-            return (
-              <>
-                <div className="card-container">
+
+      <div className="container-text container">
+        <h4>All the vegies you Need</h4>
+      </div>
+      <div className="search-container container">
+        <div className="serach-bar">
+          <input className="search-input" type="text" name="" id="" placeholder="search" onChange={(event) => { setSearch(event.target.value) }} />
+        </div>
+      </div>
+
+      <div className="menu-container ">
+        <div className="card-container container">
+          {
+            item.filter((val) => {
+              if (search === " ") {
+                return val
+              }
+              if (val.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())) {
+                return val;
+              }
+            }).map((item) => {
+              return (
+                <>
                   <Cards item={item} />
-                </div>
-              </>
-            )
-          })
-        }
-
-        {/* {item.map((item) => {
-          return (
-            <>
-              <Cards item={item} />
-            </>
-          )
-        })} */}
- 
+                </>
+              )
+            })
+          }
+        </div>
+      </div>
     </>
   );
 }

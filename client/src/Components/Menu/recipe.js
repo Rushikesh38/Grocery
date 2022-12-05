@@ -40,13 +40,8 @@ function Recipe() {
                 </div>
                 <div class="col-md-5 ps-0 d-none d-md-block">
                   {/* <!--right--> */}
-                  <div
-                    class="h-100 bg-danger text-white text-center pt-5"
-                  >
-                    Image here!
-                    <h2 class="fs-1">img</h2>
-                  </div>
-                </div>
+                    <img className="h-100 img-fluid card-img-top" src={recipedata.img} alt="Card image cap" />
+                  </div>                
               </div>
             </div>
           </div>

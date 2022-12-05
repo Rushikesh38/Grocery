@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import timerdata from "../../developer/timer.json"
+import '../Css/timer.css'
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
@@ -21,10 +22,12 @@ const Timer = () => {
     }, []);
 
     return (        
-        <div className="container">
-        <div className="row bg-primary">
+        <div className="container backgroundcolor">
+        <div className="row">
         <div className="col">
             <h1 className="">Deal Of The Day</h1>        
+            <h6 className="">{timerdata.text1}</h6>
+            <h6 className="">{timerdata.text2}</h6>
             <div className="row m-2">
         {Object.entries({
                 Days: time / DAY,
@@ -33,8 +36,10 @@ const Timer = () => {
                 Seconds: (time / SECOND) % 60,
             }).map(([label, value]) => (
                     <>
-                        <div className="col m-2 bg-danger">{`${Math.floor(value)}`.padStart(2, "0") + " "}</div>{/*</p>*/}
-                        {/* <span className="text">{label + " "}</span> */}
+                        <div className="col m-2 bg-white">
+                            {`${Math.floor(value)}`.padStart(2, "0") + " "}
+                            {/* <span className="text">{label + " "}</span> */}
+                            </div>{/*</p>*/}                        
                     </>
             ))}
         </div>
@@ -44,18 +49,19 @@ const Timer = () => {
         className="btn btn-success px-4 mb-3">
         Buy Now
         </button>
+        </div>
 
-        </div>
         <div className="col">
-            <div className="row bg-warning">
+            <div className="row">
             <div className="col">
-                img1
-                </div>
-                <div className="col">
-                img2
-                </div>
-                </div>
+            <img className="img-fluid" src={timerdata.img1} alt="Card image cap" />
+            </div>
+            <div className="col">
+            <img className="img-fluid" src={timerdata.img2} alt="Card image cap" />
+            </div>
+            </div>
         </div>
+
         </div>
         </div>        
     );

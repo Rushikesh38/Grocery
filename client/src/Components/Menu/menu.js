@@ -7,6 +7,7 @@ import Cards from "./cards";
 import Recipe from "./recipe"
 // import '../Css/menu.css'
 // import '../Css/menu.css';
+import '../Css/menu.css'
 function Menu() {
 
   // const [item,setItem] = useState({name: "",

@@ -4,9 +4,8 @@ function Cards({item}) {
     // console.log("here:")
     // console.log(item.name)
     return (
-        <>
-            <div className="container">         
-         <div className="container d-flex align-items-center">
+        <>       
+         <div className="">
            <div className="card" style={{ width: "18rem" }}>
              <h5 className="card-title card-body">{name}</h5>
              <img className="img-fluid card-img-top" src={image} alt="Card image cap" />
@@ -17,7 +16,7 @@ function Cards({item}) {
              </div>
           </div>
         </div>
-      </div>
+
         </>
     )
 }

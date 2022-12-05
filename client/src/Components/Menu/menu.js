@@ -1,30 +1,25 @@
-// import Navbar from "./navbar";
-// import Ourproducts from "./ourproducts"
 import { useEffect, useState } from "react";
 import * as api from "../../api"
 import Timer from "./timer";
 import Cards from "./cards";
 import Recipe from "./recipe"
-// import '../Css/menu.css'
-// import '../Css/menu.css';
 import '../Css/menu.css'
+import paggination from "./paggination";
 function Menu() {
-
-  // const [item,setItem] = useState({name: "",
-  //       image: "",
-  //       price: "",
-  //       description: ""
-  //   });
-
   const [item, setItem] = useState([]);
+  const [postperpage,Setpostperpage] =useState(5)
+  const [currentpage,Setcurrentpage] = useState(1)
+  const indexoflastpost = currentpage*postperpage;
+  const indexoffirstpost = indexoflastpost-postperpage;
+
+  const currentpost=item.slice(indexoffirstpost,indexoflastpost);
+
 
   useEffect(() => {
     try {
       api.fetchAdminItems()
         .then((res) => {
           setItem(res.data);
-          // console.log(item);
-          // console.log("this is running twice coz of strictmode tag - so that comp can check for errors more accurately")
         });
     } catch (error) {
       console.log(error.message);
@@ -51,7 +46,7 @@ function Menu() {
       <div className="menu-container ">
         <div className="card-container container">
           {
-            item.filter((val) => {
+            currentpost.filter((val) => {
               if (search === " ") {
                 return val
               }
@@ -67,6 +62,7 @@ function Menu() {
             })
           }
         </div>
+        <paggination totalpost={item} postperpage={postperpage} />
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import recipedata from "../../developer/recipe.json"
+import '../Css/menucomponenets.css'
 
 function Recipe() {
 
@@ -12,12 +13,12 @@ function Recipe() {
     }
 
     return (
-        <div class="container">
+        <div class="container ">
         <div class="row">
           <div
             class="col-lg-10 offset-lg-1 h-100 d-flex align-items-center justify-content-center"
           >
-            <div class="bg-white shadow rounded">
+            <div class="recipebg shadow rounded">
               <div class="row">
                 <div class="col-md-7 pe-0">
                   {/* <!--left--> */}

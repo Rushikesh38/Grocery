@@ -221,7 +221,7 @@ const Auth = () => {
                     <div className="form-right h-100 bg-danger text-white text-center pt-5">
                       WHAT TO PUT HERE?
                       <h2 className="fs-1">
-                        {isSignup ? "Account bana boi" : "Welcome back gandu"}
+                        {isSignup ? "Create Account!" : "Welcome back"}
                       </h2>
                     </div>
                   </div>

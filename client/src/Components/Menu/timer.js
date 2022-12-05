@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import timerdata from "../../developer/timer.json"
-import '../Css/timer.css'
+import '../Css/menucomponenets.css'
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
@@ -22,7 +22,7 @@ const Timer = () => {
     }, []);
 
     return (        
-        <div className="container backgroundcolor">
+        <div className="container timerbg">
         <div className="row">
         <div className="col">
             <h1 className="">Deal Of The Day</h1>        
@@ -36,9 +36,9 @@ const Timer = () => {
                 Seconds: (time / SECOND) % 60,
             }).map(([label, value]) => (
                     <>
-                        <div className="col m-2 bg-white">
+                        <div className="col m-1 bg-white">
                             {`${Math.floor(value)}`.padStart(2, "0") + " "}
-                            {/* <span className="text">{label + " "}</span> */}
+                            <span className="text">{label + " "}</span>
                             </div>{/*</p>*/}                        
                     </>
             ))}

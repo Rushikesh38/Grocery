@@ -4,10 +4,12 @@ import Timer from "./timer";
 import Cards from "./cards";
 import Recipe from "./recipe"
 import '../Css/menu.css'
-import paggination from "./paggination";
+import Paggination from "./paggination";
 function Menu() {
   const [item, setItem] = useState([]);
-  const [postperpage,Setpostperpage] =useState(100)
+  const [search, setSearch] = useState(" ");
+
+  const [postperpage,Setpostperpage] =useState(3)
   const [currentpage,Setcurrentpage] = useState(1)
   const indexoflastpost = currentpage*postperpage;
   const indexoffirstpost = indexoflastpost-postperpage;
@@ -26,7 +28,10 @@ function Menu() {
     }
 
   }, []);
-  const [search, setSearch] = useState(" ");
+  
+  const pagginate=(num)=>{
+    Setcurrentpage(num);
+  }
   return (
     <>
       {<Timer />}
@@ -40,6 +45,8 @@ function Menu() {
       </div>
 
       <div className="menu-container ">
+      <Paggination totalpost={item.length} postperpage={postperpage} pagginate={pagginate}/>
+
         <div className="card-container container">
           {
             currentpost.filter((val) => {
@@ -58,7 +65,6 @@ function Menu() {
             })
           }
         </div>
-        <paggination totalpost={item} postperpage={postperpage} />
       </div>
 
       {<Recipe />}

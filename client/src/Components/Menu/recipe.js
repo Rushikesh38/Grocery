@@ -16,7 +16,7 @@ function Recipe() {
         <div class="container ">
         <div class="row">
           <div
-            class="col-lg-10 offset-lg-1 h-100 d-flex align-items-center justify-content-center"
+            class="col"
           >
             <div class="recipebg shadow rounded">
               <div class="row">

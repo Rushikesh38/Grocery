@@ -1,0 +1,9 @@
+{
+    "JAM": ["MAGGI", "MILK", "BREAD", "TEA"], 
+    "COCK": ["COFFEE", "CORNFLAKES", "BISCUIT"], 
+    "COFFEE": ["SUGER", "CORNFLAKES", "TEA"],
+    "MAGGI": ["BREAD", "TEA", "BISCUIT"], 
+    "CORNFLAKES": ["MILK"], 
+    "TEA": ["CORNFLAKES"], 
+    "MILK": ["CORNFLAKES", "BREAD"]
+}

@@ -7,7 +7,7 @@ import '../Css/menu.css'
 import paggination from "./paggination";
 function Menu() {
   const [item, setItem] = useState([]);
-  const [postperpage,Setpostperpage] =useState(5)
+  const [postperpage,Setpostperpage] =useState(100)
   const [currentpage,Setcurrentpage] = useState(1)
   const indexoflastpost = currentpage*postperpage;
   const indexoffirstpost = indexoflastpost-postperpage;

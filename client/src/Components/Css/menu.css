@@ -4,6 +4,13 @@
     justify-content: space-evenly;
     /* background-color: black; */
 }
+.paggination-section{
+    text-align: center;
+}
+li{
+    list-style: none;
+}
+
 /* .container-text{
     text-align: center;
 } */

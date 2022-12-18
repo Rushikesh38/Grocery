@@ -14,12 +14,12 @@ function Recipe() {
 
     return (
         <div class="container ">
-        <div class="row">
+        <div class="row ">
           <div
             class="col"
           >
             <div class="recipebg shadow rounded">
-              <div class="row">
+              <div class="row menu-based">
                 <div class="col-md-7 pe-0">
                   {/* <!--left--> */}
                   <div class="h-100 py-4 px-5">

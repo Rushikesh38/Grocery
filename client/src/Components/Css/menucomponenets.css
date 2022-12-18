@@ -1,7 +1,14 @@
 .timerbg{
     background-color: #EEDDCC;
+    border-radius: 35px;
 }
 
 .recipebg{
     background-color: #DCE7D7;
+}
+.deal-of-the-day{
+    padding: 4em 6em 3em 5em;
+}
+.menu-based{
+    padding: 4em 6em 3em 5em;
 }

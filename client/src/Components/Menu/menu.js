@@ -9,12 +9,12 @@ function Menu() {
   const [item, setItem] = useState([]);
   const [search, setSearch] = useState(" ");
 
-  const [postperpage,Setpostperpage] =useState(3)
-  const [currentpage,Setcurrentpage] = useState(1)
-  const indexoflastpost = currentpage*postperpage;
-  const indexoffirstpost = indexoflastpost-postperpage;
+  const [postperpage, Setpostperpage] = useState(3)
+  const [currentpage, Setcurrentpage] = useState(1)
+  const indexoflastpost = currentpage * postperpage;
+  const indexoffirstpost = indexoflastpost - postperpage;
 
-  const currentpost=item.slice(indexoffirstpost,indexoflastpost);
+  const currentpost = item.slice(indexoffirstpost, indexoflastpost);
 
 
   useEffect(() => {
@@ -28,8 +28,8 @@ function Menu() {
     }
 
   }, []);
-  
-  const pagginate=(num)=>{
+
+  const pagginate = (num) => {
     Setcurrentpage(num);
   }
   return (
@@ -45,7 +45,7 @@ function Menu() {
       </div>
 
       <div className="menu-container ">
-      <Paggination totalpost={item.length} postperpage={postperpage} pagginate={pagginate}/>
+
 
         <div className="card-container container">
           {
@@ -64,6 +64,10 @@ function Menu() {
               )
             })
           }
+
+        </div>
+        <div className="paagination-section center">
+          <Paggination totalpost={item.length} postperpage={postperpage} pagginate={pagginate} />
         </div>
       </div>
 

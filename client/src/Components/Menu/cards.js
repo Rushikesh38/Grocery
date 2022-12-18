@@ -1,3 +1,4 @@
+import Amount from './inc_dec';
 
 function Cards({item}) {
     const { name, image, price, description } = item;
@@ -12,7 +13,8 @@ function Cards({item}) {
              <div className="card-body">
                <p className="card-text">{description}</p>
                <p className="card-text">Price:{price} </p>
-               <a href="#" className="btn btn-primary">Buy Now</a>
+               <Amount />
+               <button className="btn btn-primary">Buy Now</button>
              </div>
           </div>
         </div>

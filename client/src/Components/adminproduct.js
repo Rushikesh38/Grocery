@@ -56,7 +56,7 @@ const AdminProduct = () => {
                     </div>
                     <div className="mb-3 ">
                         <label htmlFor="exampleInputPassword1" className="form-label">Description</label>
-                        <textarea onChange={handleChange} name="" id="" cols="10" rows="8" name="description" className='product-description' placeholder='Description of product'></textarea>
+                        <textarea onChange={handleChange} id="" cols="10" rows="8" name="description" className='product-description' placeholder='Description of product'></textarea>
                         {/* <input type="password" className="form-control" id="exampleInputPassword1"/> */}
                     </div>
                     {/* <div className="mb-3 form-check">

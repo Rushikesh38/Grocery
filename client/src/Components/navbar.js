@@ -45,7 +45,7 @@ function Navbar() {
                 {/* start of navbar */}
                 <div className="container-fluid">
                     <div className="img-container">
-                        <img src={logo} alt="" className="face" className='facelogo' />
+                        <img src={logo} alt="" className="face facelogo" />
                     </div>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -74,9 +74,9 @@ function Navbar() {
                             <li className="nav-item">
                                 <Link to="/admin" className="nav-link active">Admin</Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link to="/owner" className="nav-link active">Owner</Link>
-                            </li>
+                            </li> */}
                         </ul>
 
                         {!user /* user exist? */ ? (

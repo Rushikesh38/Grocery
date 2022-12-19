@@ -3,6 +3,7 @@ import logo from '../Images/logo.webp';
 import './Css/nav.css';
 import { useState, useEffect } from 'react';
 import decode from "jwt-decode";
+import { FaShoppingCart } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router";
 
 function Navbar() {
@@ -14,29 +15,29 @@ function Navbar() {
     // const user = false;
     useEffect(
         () => {
-        //   to refresh on login
-          const token = user?.response.token;
-        //   console.log(user.response.result.utype)
-          if (token) {
-              const decodedToken = decode(token);              
-              //console.log(decodedToken.exp)
-              if (decodedToken.exp * 1000 < new Date().getTime()) {
-              logout();
+            //   to refresh on login
+            const token = user?.response.token;
+            //   console.log(user.response.result.utype)
+            if (token) {
+                const decodedToken = decode(token);
+                //console.log(decodedToken.exp)
+                if (decodedToken.exp * 1000 < new Date().getTime()) {
+                    logout();
+                }
+
+                setUser(JSON.parse(localStorage.getItem("profile")));
             }
-    
-            setUser(JSON.parse(localStorage.getItem("profile")));
-          }
         },
         [
-          location,
+            location,
         ] /*on location change run this to set user. No no need to refresh to get profile in navbar on login */
-      );    
+    );
 
-      const logout = () => {
+    const logout = () => {
         localStorage.clear();
         navigate("/");
-      };
-    
+    };
+
 
     return (
         <div>
@@ -76,19 +77,34 @@ function Navbar() {
                             </li>
                             {/* <li className="nav-item">
                                 <Link to="/owner" className="nav-link active">Owner</Link>
+<<<<<<< HEAD
                             </li> */}
+=======
+                            </li>
+
+                        </ul>
+                        <ul>
+
+>>>>>>> 049eaee (cart system)
                         </ul>
 
                         {!user /* user exist? */ ? (
-                        <div className="form-inline my-2 my-lg-0">
-                        <Link to="/auth">
-                           <button className='btn btn-danger'>Sign In</button>
-                        </Link>
-                        </div>):(
-                        <div className="row">
-                        <h1 className="col">{user.response.result.name}</h1>
-                        <button className='btn btn-danger col' onClick={logout}>Logout</button>
-                        </div>
+                            <div className="form-inline my-2 my-lg-0 cart">
+                                <li>
+                                    <Link to="/cart">
+                                        <FaShoppingCart size="2em" />
+                                    </Link>
+                                </li>
+                                <Link to="/auth">
+                                    <button className='btn btn-danger'>Sign In</button>
+                                </Link>
+
+
+                            </div>) : (
+                            <div className="row">
+                                <h1 className="col">{user.response.result.name}</h1>
+                                <button className='btn btn-danger col' onClick={logout}>Logout</button>
+                            </div>
                         )}
                         {/* <form className="form-inline my-2 my-lg-0">
                             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
@@ -97,8 +113,12 @@ function Navbar() {
                 </div>
                 {/* End of navbar */}
             </nav>
+
+
         </div>
     );
 }
 
 export default Navbar;
+
+

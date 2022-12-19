@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // css
 import "bootstrap/dist/js/bootstrap.bundle.min"; // js
 import "../Components/Css/aboutus.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import emailjs from "emailjs-com"
+// import emailjs from "emailjs-com"
 
 const aboutus = () => {
 
@@ -11,7 +11,7 @@ const aboutus = () => {
   {
     e.preventDefault();
     console.log(e.target)
-    emailjs.sendForm('service_kfvnhvq', 'template_asr05xw', e.target, '43cP1PiWW5qcMByeg')
+    // emailjs.sendForm('service_kfvnhvq', 'template_asr05xw', e.target, '43cP1PiWW5qcMByeg')
       .then((result) => {
           console.log(result);
       }, (error) => {

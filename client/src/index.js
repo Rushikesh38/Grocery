@@ -23,12 +23,8 @@ root.render(
         <Route path="/menu" element={<Menu />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/admin" element={<AdminProduct />} />
-<<<<<<< HEAD
-        {/* <Route path="/owner" element={<Owner />} /> */}
-=======
         <Route path="/owner" element={<Owner />} />
         <Route path="/cart"  element={<Cart/>}/>
->>>>>>> 049eaee (cart system)
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

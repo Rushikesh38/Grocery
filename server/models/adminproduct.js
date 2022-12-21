@@ -5,6 +5,7 @@ const itemSchema = mongoose.Schema({
     image: String,
     price: Number,
     description: String,
+    creator: String,
 })
 
 var AdminItem = mongoose.model("AdminData", itemSchema);

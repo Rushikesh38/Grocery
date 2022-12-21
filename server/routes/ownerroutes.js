@@ -1,5 +1,6 @@
-import express from "express";
+// to del
 
+import express from "express";
 import { createOwnerItem, getOwnerItems } from "../controller/ownercontroller.js";
 
 const router = express.Router();

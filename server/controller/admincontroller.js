@@ -15,9 +15,10 @@ export const getAdminItems = async (req, res) => {
 
 export const createAdminItem = async (req, res) => {
     const post = req.body;
-  
+    // console.log(req.userId)
     const newAdminItem = new AdminItem({
       ...post,
+      creator: req.userId,
     });
   
     try {

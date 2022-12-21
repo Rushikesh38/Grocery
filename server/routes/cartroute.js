@@ -1,9 +1,10 @@
 import express from 'express';
-import { getcartdata,createcartdata } from '../controller/cartcontroller';
+import auth from '../middleware/auth.js';
+import { getcartdata,createcartdata } from '../controller/cartcontroller.js';
 const router = express.Router();
 
-router.post("/",createcartdata);
-router.get("/",getcartdata);
+router.post("/",auth, createcartdata);
+router.get("/",auth, getcartdata);
 
 
 export default router;

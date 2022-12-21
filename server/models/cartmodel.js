@@ -5,6 +5,7 @@ const cartSchema = mongoose.Schema({
     price:Number,
     quantity:Number,
     descroiption:String,
+    creator: String,
 })
 
 var cartItems = mongoose.model("cart",cartSchema);

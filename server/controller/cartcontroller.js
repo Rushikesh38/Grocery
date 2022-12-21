@@ -17,7 +17,8 @@ export const createcartdata = async (req,res)=>{
     const cartdata = req.body;
 
     const newCartData = new cartItems({
-        ...cartdata
+        ...cartdata,
+        creator: req.userId,
     });
     try{
         await newCartData.save();

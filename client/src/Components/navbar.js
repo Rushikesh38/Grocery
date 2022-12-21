@@ -75,17 +75,15 @@ function Navbar() {
                             <li className="nav-item">
                                 <Link to="/admin" className="nav-link active">Admin</Link>
                             </li>
-                            {/* <li className="nav-item">
+                            <li className="nav-item">
                                 <Link to="/owner" className="nav-link active">Owner</Link>
-<<<<<<< HEAD
-                            </li> */}
-=======
                             </li>
+                            
 
                         </ul>
                         <ul>
 
->>>>>>> 049eaee (cart system)
+
                         </ul>
 
                         {!user /* user exist? */ ? (

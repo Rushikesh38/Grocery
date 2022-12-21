@@ -6,5 +6,5 @@ const cartSchema = mongoose.Schema({
     descroiption:String,
 })
 
-var cartItems = mongoose.model("cartItem",cartSchema);
+var cartItems = mongoose.model("cart",cartSchema);
 export default cartItems;

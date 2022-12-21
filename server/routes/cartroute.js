@@ -6,4 +6,4 @@ router.post("/");
 router.get("/");
 
 
-export deafult router;
+export default router;

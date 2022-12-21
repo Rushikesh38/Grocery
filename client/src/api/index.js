@@ -10,3 +10,13 @@ export const createOwnerItems = (newOwnerItem) => API.post("/owner", newOwnerIte
 
 export const signIn = (formData) => API.post("/user/signin", formData);
 export const signUp = (formData) => API.post("/user/signup", formData);
+
+
+
+//To get the data from the data base;
+export const fetchCartItem =()=>API.get("/cart");
+
+
+
+//To add item in the cart;
+export const addCartItem =(newCartItem)=>API.post("/admin",newCartItem)

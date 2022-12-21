@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import decode from "jwt-decode";
 import { FaShoppingCart } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router";
-
+import * as api from '../api/index';
 function Navbar() {
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile"))); //get user from local storage
@@ -37,6 +37,14 @@ function Navbar() {
         localStorage.clear();
         navigate("/");
     };
+
+    const oncartclick=()=>{
+        try{
+            api.fetchCartItem();
+        }catch(error){
+            console.log(error.message);
+        }
+    }
 
 
     return (
@@ -89,7 +97,7 @@ function Navbar() {
                         {!user /* user exist? */ ? (
                             <div className="form-inline my-2 my-lg-0 cart">
                                 <li>
-                                    <Link to="/cart">
+                                    <Link to="/cart" onClick={oncartclick}>
                                         <FaShoppingCart size="2em" />
                                     </Link>
                                 </li>

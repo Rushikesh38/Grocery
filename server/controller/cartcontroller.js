@@ -2,6 +2,8 @@ import express from 'express';
 import cartItems from "../models/cartmodel.js";
 
 const router = express.Router();
+
+
 export const getcartdata = async(req,res)=>{
     try{
         const cartitem = await cartItems.find({});

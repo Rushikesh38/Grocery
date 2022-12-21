@@ -15,6 +15,7 @@ function Cards({item}) {
                <p className="card-text">Price:{price} </p>
                <Amount />
                <button className="btn btn-primary">Buy Now</button>
+               <button>Add to cart</button>
              </div>
           </div>
         </div>

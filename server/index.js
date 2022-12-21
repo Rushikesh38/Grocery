@@ -5,7 +5,7 @@ import cors from "cors";
 import adminRoutes from "./routes/adminroutes.js";
 import onwerRoutes from "./routes/ownerroutes.js"
 import userRoutes from "./routes/users.js"
-
+import cartroute from './routes/cartroute.js';
 // code to run a python file using Node.js. Will need this when we add a recommendation model
 // import {spawn} from 'child_process'
 
@@ -34,6 +34,7 @@ const PORT = 1300;
 app.use("/admin", adminRoutes);
 app.use("/owner", onwerRoutes);
 app.use("/user", userRoutes);
+app.use("/cart",cartroute);
 
 // const CONNECTION_URL = "mongodb://0.0.0.0:27017/Grocery-App";
 const CONNECTION_URL = "mongodb+srv://rushikesh:rushikesh@cluster0.wmpaxgm.mongodb.net/?retryWrites=true&w=majority";
@@ -49,6 +50,8 @@ mongoose
     console.log(error);
   });
 
+
+  
 app.listen(PORT, () => {
     console.log("Server started on 1300");
   });

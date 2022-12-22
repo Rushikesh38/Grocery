@@ -5,7 +5,7 @@ import './Css/footer.css';
 const footer = () => {
     return (
         <>
-            <div className="footer d-flex justify-content-between">
+            <div className="footer d-flex justify-content-between p-1">
                 <div className="footer-item">
                     <p>Term and Condition     Privarcy Policy</p>
                 </div>

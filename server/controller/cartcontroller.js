@@ -5,11 +5,10 @@ const router = express.Router();
 
 
 export const getcartdata = async(req,res)=>{
-    try{
-        // const cartitem = await cartItems.findById(req.userId);
-        console.log(req.body)
+    try{        
+        // console.log(req.body)
         const cartitem = await cartItems.find({"creator":req.userId});
-        console.log(cartitem);
+        // console.log(cartitem);
         // req.params vs req.userId
         res.status(200).json(cartitem);
     }catch(error){

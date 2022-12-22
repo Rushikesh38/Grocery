@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import * as api from "../api"
+import Cards from "./Menu/cards";
+
+// TODO: img, price: quantity * price, remove button, a common but now button at top right
 
 const Cart =()=>{
 
@@ -20,7 +23,18 @@ const Cart =()=>{
 
     return(
         <>
-            <h1>Cart section</h1>
+        <div className="card-container container">
+          {
+            cartdata.map((cartdata) => {
+              return (
+                
+                  <Cards item={cartdata}/>
+                
+              )
+            })
+          }
+          </div>
+
         </>
     )
 }

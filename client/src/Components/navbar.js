@@ -85,19 +85,19 @@ function Navbar() {
                         </ul>
 
                         {!user /* user exist? */ ? (
-                            <div className="form-inline my-2 my-lg-0 cart">
-                                <li>
-                                    <Link to="/cart">
-                                        <FaShoppingCart size="2em" />
-                                    </Link>
-                                </li>
+                            <div className="form-inline my-2 my-lg-0">
+                                
                                 <Link to="/auth">
                                     <button className='btn btn-danger'>Sign In</button>
                                 </Link>
 
 
                             </div>) : (
-                            <div className="row">
+                            <div className="row">                                
+                                    <Link className="col" to="/cart">
+                                        <FaShoppingCart size="2em" />
+                                    </Link>
+                                
                                 <h1 className="col">{user.response.result.name}</h1>
                                 <button className='btn btn-danger col' onClick={logout}>Logout</button>
                             </div>

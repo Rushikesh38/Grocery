@@ -4,9 +4,8 @@ const cartSchema = mongoose.Schema({
     name:String,
     price:Number,
     quantity:Number,
-    descroiption:String,
-    creator: String,
-    description:String,
+    // creator: String,
+    // description:String,
 })
 
 var cartItems = mongoose.model("cart",cartSchema);

@@ -11,7 +11,7 @@ function Navbar() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile"))); //get user from local storage
     const location = useLocation();
     const navigate = useNavigate();
-
+    const [cartdata,setCartdata]=useState([]);
     // const user = false;
     useEffect(
         () => {
@@ -40,10 +40,15 @@ function Navbar() {
 
     const oncartclick=()=>{
         try{
-            api.fetchCartItem();
+            api.fetchCartItem().then((res)=>{
+                setCartdata(res.data);
+                console.log(res.data);
+            });
         }catch(error){
             console.log(error.message);
         }
+        console.log("cart data in carts");
+        console.log(cartdata);
     }
 
 

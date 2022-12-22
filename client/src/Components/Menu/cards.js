@@ -1,17 +1,33 @@
 import Amount from './inc_dec';
-
+import * as api from '../../api';
+import { useState } from 'react';
 function Cards({item}) {
     const { name, image, price, description } = item;
-    // console.log("here:")
-    // console.log(item.name)
+
+    // const [citem,setCItem] = useState({
+    //   name: "",
+    //   price:"",
+    //   quantity:1
+    // });
     function handlecartclick() {
       console.log("add to cart clicked");
+      const cartitem={
+        name:item.name,
+        price:item.price,
+        quantity:1
+      }
+      try{
+        api.addCartItem(cartitem);
+      }catch(error){
+        console.log(error.message);
+      }
+      console.log(cartitem);
       // try{
       //   api.addCartItem(item);
       // }catch(error){
       //   console.log(error.message);
       // }
-      console.log(item);
+      // console.log(item);
     }
 
     return (

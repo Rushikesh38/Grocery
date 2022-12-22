@@ -30,4 +30,4 @@ export const fetchCartItem =()=>API.get("/cart");
 
 
 //To add item in the cart;
-export const addCartItem =(newCartItem)=>API.post("/admin",newCartItem)
+export const addCartItem =(newCartItem)=>API.post("/cart",newCartItem)

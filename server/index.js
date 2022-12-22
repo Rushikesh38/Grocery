@@ -36,8 +36,8 @@ app.use("/owner", onwerRoutes);
 app.use("/user", userRoutes);
 app.use("/cart",cartroute);
 
-// const CONNECTION_URL = "mongodb://0.0.0.0:27017/Grocery-App";
-const CONNECTION_URL = "mongodb+srv://rushikesh:rushikesh@cluster0.wmpaxgm.mongodb.net/?retryWrites=true&w=majority";
+const CONNECTION_URL = "mongodb://0.0.0.0:27017/Grocery-App";
+// const CONNECTION_URL = "mongodb+srv://rushikesh:rushikesh@cluster0.wmpaxgm.mongodb.net/?retryWrites=true&w=majority";
 
 
 mongoose

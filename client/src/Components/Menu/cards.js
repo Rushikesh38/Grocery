@@ -16,6 +16,7 @@ function Cards({item}) {
         price:item.price,
         quantity:1
       }
+      console.log(cartitem)
       try{
         api.addCartItem(cartitem);
       }catch(error){

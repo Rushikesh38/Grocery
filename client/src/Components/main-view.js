@@ -3,7 +3,7 @@ import Hero from '../Images/finalhero.png'
 import { AiTwotoneStar } from "react-icons/ai";
 import { FaUsers } from "react-icons/fa";
 import { TbMinusVertical } from "react-icons/tb";
-import Footer from './footer';
+
 function main() {
     return (
         <>
@@ -68,7 +68,7 @@ function main() {
                     {/* <i className="fa-solid fa-star-sharp"></i> */}
                 </div>
             </div>
-            <Footer/>
+           
         </>
     );
 }

@@ -10,6 +10,8 @@ import Auth from "./Components/auth";
 import AdminProduct from "./Components/adminproduct";
 import Owner from "./Components/owner"
 import Cart from "./Components/cart";
+import Footer from "./Components/footer";
+import './Components/Css/index.css'
 const root = ReactDom.createRoot(document.getElementById("root"));
 
 root.render(
@@ -29,6 +31,9 @@ root.render(
         <Route path="/owner" element={<Owner />} />
         <Route path="/cart"  element={<Cart/>}/>
       </Routes>
+      <div className="foot">
+      <Footer/>
+      </div>
     </BrowserRouter>
   </React.StrictMode>
 );

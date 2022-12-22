@@ -29,6 +29,17 @@ function Menu() {
 
   }, []);
 
+
+  const handlecartclick=(item)=>{
+    console.log("add to cart clicked");
+    // try{
+    //   api.addCartItem(item);
+    // }catch(error){
+    //   console.log(error.message);
+    // }
+    console.log(item);
+  }
+
   const pagginate = (num) => {
     Setcurrentpage(num);
   }
@@ -59,7 +70,7 @@ function Menu() {
             }).map((item) => {
               return (
                 <>
-                  <Cards item={item} />
+                  <Cards item={item} handlecartclick={handlecartclick}/>
                 </>
               )
             })

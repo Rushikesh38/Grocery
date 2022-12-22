@@ -1,9 +1,19 @@
 import Amount from './inc_dec';
 
-function Cards({item,handlecartclick}) {
+function Cards({item}) {
     const { name, image, price, description } = item;
     // console.log("here:")
     // console.log(item.name)
+    function handlecartclick() {
+      console.log("add to cart clicked");
+      // try{
+      //   api.addCartItem(item);
+      // }catch(error){
+      //   console.log(error.message);
+      // }
+      console.log(item);
+    }
+
     return (
         <>       
          <div className="">
@@ -15,7 +25,7 @@ function Cards({item,handlecartclick}) {
                <p className="card-text">Price:{price} </p>
                <Amount />
                <button className="btn btn-primary">Buy Now</button>
-               <button onClick={handlecartclick(item.name)} >Add to cart</button>
+               <button onClick={handlecartclick} >Add to cart</button>
              </div>
           </div>
         </div>

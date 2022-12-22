@@ -6,7 +6,8 @@ const router = express.Router();
 
 export const getcartdata = async(req,res)=>{
     try{
-        const cartitem = await cartItems.find({});
+        const cartitem = await cartItems.findById(req.userId);
+        // req.params vs req.userId
         res.status(200).json(cartitem);
     }catch(error){
         res.status(404).json({message:error.message});

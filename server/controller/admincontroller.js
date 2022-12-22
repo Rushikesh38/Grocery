@@ -16,6 +16,7 @@ export const getAdminItems = async (req, res) => {
 export const createAdminItem = async (req, res) => {
     const post = req.body;
     // console.log(req.userId)
+    // TODO: return if utype is not admin
     const newAdminItem = new AdminItem({
       ...post,
       creator: req.userId,

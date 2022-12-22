@@ -5,6 +5,8 @@ import Cards from "./cards";
 import Recipe from "./recipe"
 import '../Css/menu.css'
 import Paggination from "./paggination";
+import Suggest from "./suggest";
+
 function Menu() {
   const [item, setItem] = useState([]);
   const [search, setSearch] = useState(" ");
@@ -35,6 +37,7 @@ function Menu() {
   return (
     <>
       {<Timer />}
+      {<Suggest item={item}/>}
       <div className="container-text container text-center">
         <h4>All the vegies you Need</h4>
       </div>

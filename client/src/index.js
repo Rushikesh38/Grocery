@@ -8,7 +8,6 @@ import Navbar from "./Components/navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Auth from "./Components/auth";
 import AdminProduct from "./Components/adminproduct";
-import Owner from "./Components/owner"
 import Cart from "./Components/cart";
 import Footer from "./Components/footer";
 import './Components/Css/index.css'
@@ -24,11 +23,7 @@ root.render(
         <Route path="/contactus" element={<Contact />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/auth" element={<Auth />} />
-        <Route path="/admin" element={<AdminProduct />} />
-
-        {/* <Route path="/owner" element={<Owner />} /> */}
-
-        <Route path="/owner" element={<Owner />} />
+        <Route path="/admin" element={<AdminProduct />} />                
         <Route path="/cart"  element={<Cart/>}/>
       </Routes>
       <div className="foot">

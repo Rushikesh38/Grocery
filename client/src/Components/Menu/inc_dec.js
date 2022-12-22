@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-function Contact() {
-    const [amount, setAmount] = useState(1);
+function Contact({amount, setAmount}) {
     const setInc = () => {
         setAmount(amount + 1);
     };

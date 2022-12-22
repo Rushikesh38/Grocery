@@ -3,7 +3,6 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import adminRoutes from "./routes/adminroutes.js";
-import onwerRoutes from "./routes/ownerroutes.js"
 import userRoutes from "./routes/users.js"
 import cartroute from './routes/cartroute.js';
 // code to run a python file using Node.js. Will need this when we add a recommendation model
@@ -32,7 +31,6 @@ app.use(cors());
 const PORT = 1300;
 
 app.use("/admin", adminRoutes);
-app.use("/owner", onwerRoutes);
 app.use("/user", userRoutes);
 app.use("/cart",cartroute);
 

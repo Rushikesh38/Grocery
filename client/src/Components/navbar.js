@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import decode from "jwt-decode";
 import { FaShoppingCart } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router";
-import * as api from '../api/index';
+
 function Navbar() {
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile"))); //get user from local storage
@@ -73,9 +73,9 @@ function Navbar() {
                             <li className="nav-item">
                                 <Link to="/admin" className="nav-link active">Admin</Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link to="/owner" className="nav-link active">Owner</Link>
-                            </li>
+                            </li> */}
                             
 
                         </ul>

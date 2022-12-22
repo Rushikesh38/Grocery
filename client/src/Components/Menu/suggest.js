@@ -47,11 +47,6 @@ function Suggest({item}) {
       setSuggest(unique)
       console.log(unique)
 
-      // get all the items from menu state and then filter the items with the unique array
-      // const menuitems = item.map((item) => {
-      //   return item.name.toUpperCase()
-      // })
-      // console.log(menuitems)
       const filtered = item.filter((item) => {        
         return unique.includes(item.name.toUpperCase())
       })
@@ -64,8 +59,11 @@ function Suggest({item}) {
     return (
       <div className="container recipebg">
       <div className="deal-of-the-day">
-      <p>Recommended for you:</p>
+      {/* <h1>Recommended for you:</h1> */}
       <div className="card-container container">  
+      {
+        item.length === 0 ? <h1>Keep Shopping with us!</h1> : <h1>Recommended for you:</h1>
+      }
       {
         suggest.map((item) => {
           return(

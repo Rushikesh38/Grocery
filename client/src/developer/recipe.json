@@ -1,17 +1,20 @@
 {
     "title":"Tomato soup",
-    "img":"https://5.imimg.com/data5/IN/VR/MY-17779515/assorted-fresh-cut-fruits-pack-250x250.png",
+    "img":"https://images-platform.99static.com//V0SRoNt6bCpkqO65TgBXN4WfcKo=/308x98:1691x1481/fit-in/500x500/99designs-contests-attachments/98/98204/attachment_98204581",
     "recipe":[
         {
-            "item":"tomato", 
+            "name":"tomato", 
+            "price": 50,
             "quantity": 3
         },
         {
-            "item":"water", 
+            "name":"water", 
+            "price": 50,
             "quantity": 2
         },
         {
-            "item":"masala", 
+            "name":"masala", 
+            "price": 50,
             "quantity": 4
         }
         

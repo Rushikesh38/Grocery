@@ -3,7 +3,7 @@ import mldata from "../../developer/recommendation.json"
 import '../Css/menucomponenets.css'
 import * as api from "../../api"
 import Cards from "./cards";
-
+import '../Css/suggest.css'
 function Suggest({item}) {
 
   const [cartdata,setCartdata]=useState([]);
@@ -58,12 +58,13 @@ function Suggest({item}) {
 
     return (
       <div className="container recipebg">
-      <div className="deal-of-the-day">
-      {/* <h1>Recommended for you:</h1> */}
-      <div className="card-container container">  
+      <div className="deal-of-the-day recommendation">
       {
-        item.length === 0 ? <h1>Keep Shopping with us!</h1> : <h1>Recommended for you:</h1>
+        item.length === 0 ? <h1>Keep Shopping with us!</h1> : <h3>Recommended for you:</h3>
       }
+      {/* <h1>Recommended for you:</h1> */}
+      <div className="card-container container recom-contiaer">  
+      
       {
         suggest.map((item) => {
           return(

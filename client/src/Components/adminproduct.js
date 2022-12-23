@@ -2,6 +2,8 @@ import './Css/adminForm.css';
 import React,{useState} from 'react';
 import * as api from "../api"
 
+// TODO: If user not admin
+
 const AdminProduct = () => {
 
     const [item,setItem] = useState({name: "",

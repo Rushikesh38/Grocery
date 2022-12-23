@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // css
 import "bootstrap/dist/js/bootstrap.bundle.min"; // js
 import "../Components/Css/aboutus.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-// import emailjs from "emailjs-com"
+import emailjs from "emailjs-com"
 
 const aboutus = () => {
 
@@ -11,7 +11,7 @@ const aboutus = () => {
   {
     e.preventDefault();
     console.log(e.target)
-    // emailjs.sendForm('service_kfvnhvq', 'template_asr05xw', e.target, '43cP1PiWW5qcMByeg')
+    emailjs.sendForm('service_kfvnhvq', 'template_asr05xw', e.target, '43cP1PiWW5qcMByeg')
       .then((result) => {
           console.log(result);
       }, (error) => {
@@ -23,11 +23,8 @@ const aboutus = () => {
 
   return (
     <>
-      {
-        // TODO: one needs to be sign in to be used to view this page... just redirect them to login n then redirect here... will be a good feature to learn
-      }
-      <div className="login-page">
-        <div className="container">
+      <div className="">
+        <div className="container mt-5">
           <div className="row">
             <div className="col-lg-10 offset-lg-1 h-100 d-flex align-items-center justify-content-center">
               <div className="bg-white shadow rounded">
@@ -38,12 +35,7 @@ const aboutus = () => {
                         <h3 className="m">Send Us a Message</h3>
                         <div className="col-12">
                           <label>Subject</label>
-                          <div className="input-group">
-                            {
-                              // <div className="input-group-text">
-                              //<i className="bi bi-person-fill"></i>
-                              //</div>
-                            }
+                          <div className="input-group">                            
                             <input
                               type="text"
                               className="form-control"

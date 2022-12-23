@@ -3,8 +3,16 @@ import Hero from '../Images/finalhero.png'
 import { AiTwotoneStar } from "react-icons/ai";
 import { FaUsers } from "react-icons/fa";
 import { TbMinusVertical } from "react-icons/tb";
+import { useNavigate } from 'react-router';
 
-function main() {
+function Main() {
+
+    let navigate = useNavigate();
+    const routeChange = () =>{ 
+        let path = `menu`; 
+        navigate(path);
+      }
+
     return (
         <>
             <div className="container">
@@ -22,7 +30,7 @@ function main() {
                         </div>
                         <div className="btn-section">
                             <span>
-                                <button className="btn btn-danger">Shop Now</button>
+                                <button onClick={routeChange} className="btn btn-danger">Shop Now</button>
                             </span>
                         </div>
                     </div>
@@ -73,4 +81,4 @@ function main() {
     );
 }
 
-export default main;
+export default Main;

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import timerdata from "../../developer/timer.json"
 import '../Css/menucomponenets.css'
+import * as api from '../../api/index.js'
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
@@ -12,6 +13,13 @@ const Timer = () => {
     const parsedDeadline = useMemo(() => Date.parse(deadline), [deadline]);
     const [time, setTime] = useState(parsedDeadline - Date.now());
 
+    const HandleClick = (e) => {
+        e.preventDefault() 
+        timerdata.items.map(data=>(
+            api.addCartItem({name:data.name,quantity:data.quantity,price:data.price})
+        ))
+    }
+    
     useEffect(() => {
         const interval = setInterval(
             () => setTime(parsedDeadline - Date.now()),
@@ -25,9 +33,9 @@ const Timer = () => {
         <div className="container timerbg">
             <div className="row deal-of-the-day">
                 <div className="col">
-                    <h1 className="">Deal Of The Day</h1>
-                    <h6 className="">{timerdata.text1}</h6>
-                    <h6 className="">{timerdata.text2}</h6>
+                    <h1 className="">Special Offer</h1>
+                    <h6 className="">{timerdata.items[0].name}</h6>
+                    <h6 className="">{timerdata.items[1].name}</h6>
                     <div className="row m-2">
                         {Object.entries({
                             Days: time / DAY,
@@ -45,9 +53,10 @@ const Timer = () => {
                     </div>
                     <h6 className="">Days To Go</h6>
                     <button
+                        onClick={HandleClick}
                         type="submit"
                         className="btn btn-success px-4 mb-3">
-                        Buy Now
+                        Add to cart
                     </button>
                 </div>
 

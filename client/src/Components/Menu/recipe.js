@@ -4,13 +4,10 @@ import * as api from '../../api/index.js'
 
 function Recipe() {
 
-    const hello = (e) => {
+    const HandleClick = (e) => {
         e.preventDefault() 
-        // console.log(recipedata.title)
         recipedata.recipe.map(data=>(
             api.addCartItem({name:data.name,quantity:data.quantity,price:data.price})
-            // console.log(data.name + " " + data.quantity + " " + data.price)
-            // console.log()
         ))
     }
 
@@ -30,7 +27,7 @@ function Recipe() {
               <button
                   type="submit"
                   className="btn btn-success px-4"
-                  onClick={hello}
+                  onClick={HandleClick}
                   >
                   Add to cart
               </button>

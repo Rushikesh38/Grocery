@@ -16,6 +16,7 @@ function Navbar() {
         () => {
             //   to refresh on login
             const token = user?.response.token;
+            // console.log(user?.response.result.utype)
             //   console.log(user.response.result.utype)
             if (token) {
                 const decodedToken = decode(token);
@@ -70,14 +71,15 @@ function Navbar() {
                             <li className="nav-item">
                                 <Link to="/contactus" className="nav-link active">Contactus</Link>
                             </li>
+                            {                                
+                                user?.response.result.utype === "seller" &&
                             <li className="nav-item">
                                 <Link to="/admin" className="nav-link active">Admin</Link>
                             </li>
+}
                             {/* <li className="nav-item">
                                 <Link to="/owner" className="nav-link active">Owner</Link>
                             </li> */}
-                            
-
                         </ul>
                         <ul>
 

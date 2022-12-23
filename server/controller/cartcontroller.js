@@ -31,4 +31,15 @@ export const createcartdata = async (req,res)=>{
         error.message});
     }
 };
+
+export const deletecartdata = async (req,res)=>{
+    try{
+        await cartItems.deleteMany();
+        res.status(200).json({message:"deleted"});
+    }catch(error){
+        res.status(404).json({message:error.message});
+    }
+};
+
+
 export default router;

@@ -158,16 +158,6 @@ const Auth = () => {
                             Forgot Password?
                           </a>
                         </div> */}
-
-                        <div className="col-12">
-                          <button
-                            type="submit"
-                            className="btn btn-primary px-4 float-end"
-                            onClick={handleSubmit}
-                          >
-                            {isSignup ? "Sign Up" : "Sign In"}
-                          </button>
-                        </div>
                         
                         {isSignup && (
                         <div className="row">  
@@ -183,13 +173,17 @@ const Auth = () => {
                           Seller
                         </label>
                       </div>
-                      <div className="form-check col">
-                        <input className="form-check-input" type="radio" onChange={handleChange} name="uType" id="ownerType" value="owner"/>
-                        <label className="form-check-label" for="flexRadioDefault3">
-                          Owner
-                        </label>
-                      </div>
                       </div>)}
+
+                      <div className="col-12">
+                          <button
+                            type="submit"
+                            className="btn btn-primary px-4 float-end"
+                            onClick={handleSubmit}
+                          >
+                            {isSignup ? "Sign Up" : "Sign In"}
+                          </button>
+                        </div>
 
                         {/* <div className="container text-center">
                           <div>or login with</div>

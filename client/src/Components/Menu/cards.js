@@ -25,10 +25,10 @@ function Cards({item}) {
     
     return (
         <>       
-         <div className="">
+         <div className="mb-2">
            <div className="card" style={{ width: "18rem" }}>
              <h5 className="card-title card-body">{name}</h5>
-             <img className="img-fluid card-img-top" src={image} alt="Card image cap" />
+             {!isCart && <img className="img-fluid card-img-top" src={image} alt="Card image cap" />}
              <div className="card-body">
                <p className="card-text">{description}</p>
                <p className="card-text">Price:{price} </p>

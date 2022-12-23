@@ -13,7 +13,7 @@ function contact() {
           <ul>
             <li>Buying and selling of grocery</li>
             <li>Quick recipe</li>
-            <li>Perfect recommendation(ML)</li>
+            <li>Recommendation algorithm(ML) for better experice</li>
           </ul>
           </div>
          
